@@ -2,19 +2,17 @@ using AirlineCoreLibrary.Service;
 
 namespace AirlinesMessageProcessor
 {
-    public class Worker(ILogger<Worker> logger, IEventPublisher publisher) : BackgroundService
+    public class Worker(IEventProcessor processor) : BackgroundService
     {
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (logger.IsEnabled(LogLevel.Information))
-                {
-                    logger.LogInformation("Flight Event Processing: {time}", DateTimeOffset.Now);
+                Console.WriteLine($"Flight Event Listening to Process: {DateTimeOffset.Now}");
 
-                    // Simulate a flight event
-                    await publisher.PublishFlightEventAsync();
-                }
+                // Simulate a flight event
+                await processor.ProcessFlightEventAsync();
+
                 await Task.Delay(5000, stoppingToken);
             }
         }
