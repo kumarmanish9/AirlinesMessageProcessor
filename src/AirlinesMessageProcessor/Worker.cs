@@ -1,4 +1,5 @@
 using AirlineCoreLibrary.Service;
+using AirlineCoreLibrary.Utility;
 
 namespace AirlinesMessageProcessor
 {
@@ -8,7 +9,7 @@ namespace AirlinesMessageProcessor
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                Console.WriteLine($"Flight Event Listening to Process: {DateTimeOffset.Now}");
+                AppLogger.LogInfo($"Flight Event Listening to Process: {DateTimeOffset.Now}");
 
                 // Simulate a flight event
                 await processor.ProcessFlightEventAsync();
