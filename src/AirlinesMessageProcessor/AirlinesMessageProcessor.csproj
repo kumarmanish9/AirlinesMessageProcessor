@@ -18,9 +18,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="AirlineCoreLibrary">
-			<HintPath>..\..\..\AirlineCoreLibrary\src\AirlineCoreLibrary\bin\Debug\net8.0\AirlineCoreLibrary.dll</HintPath>
-		</Reference>
+	  <Reference Include="AirlineCoreLibrary">
+	    <HintPath>..\..\..\AirlineCoreLibrary\src\AirlineCoreLibrary\bin\Debug\net8.0\AirlineCoreLibrary.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>
