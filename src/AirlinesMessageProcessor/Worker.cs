@@ -14,7 +14,8 @@ namespace AirlinesMessageProcessor
                 // Simulate a flight event
                 await processor.ProcessFlightEventAsync();
 
-                await Task.Delay(5000, stoppingToken);
+                // Wait for 5 seconds before processing the next event
+                Thread.Sleep(5000);
             }
         }
     }
